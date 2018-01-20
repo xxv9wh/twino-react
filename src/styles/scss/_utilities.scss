@@ -1,0 +1,134 @@
+// displays
+.d {
+    &-flex {
+        display: flex;
+    }
+    &-block {
+        display: block;
+    }
+    &-inline-block {
+        display: inline-block;
+    }
+    &-none {
+        display: none;
+    }
+}
+
+// margins
+.m {
+    &t {
+
+    }
+    &r {
+
+    }
+    &b{
+
+    }
+    &l {
+
+    }
+    &x {
+        &-auto {
+            margin-left: auto;
+            margin-right: auto;
+            float:none;
+            overflow: hidden;
+        }
+
+    }
+    &y {
+
+    }
+}
+
+// paddings
+.p {
+
+    @for $i from 1 through 10 {
+        &-#{$i} {
+            padding: #{$i}rem;
+        }
+    }
+
+    &t {
+        @for $i from 1 through 10 {
+            &-#{$i} {
+                padding-top: #{$i}rem;
+            }
+        }
+    }
+    &r {
+        @for $i from 1 through 10 {
+            &-#{$i} {
+                padding-right: #{$i}rem;
+            }
+        }
+    }
+    &b{
+        @for $i from 1 through 10 {
+            &-#{$i} {
+                padding-bottom: #{$i}rem;
+            }
+        }
+    }
+    &l {
+        @for $i from 1 through 10 {
+            &-#{$i} {
+                padding-left: #{$i}rem;
+            }
+        }
+    }
+    &x {
+        @for $i from 1 through 10 {
+            &-#{$i} {
+                padding-left: #{$i}rem;
+                padding-right: #{$i}rem;
+            }
+        }
+    }
+    &y {
+        @for $i from 1 through 10 {
+            &-#{$i} {
+                padding-top: #{$i}rem;
+                padding-bottom: #{$i}rem;
+            }
+        }
+    }
+}
+
+// align
+
+.align-center {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-responsive {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+@each $breakpoint in $grid-breakpoints {
+
+    $key: nth($breakpoint, 1);
+    $val: nth($breakpoint, 2);
+
+    @media (max-width: #{$val}) {
+        @for $i from 1 through $grid-columns {
+            .hidden-#{$key}-down {
+                display: none !important
+            }
+        }
+    }
+
+    @media (min-width: #{$val}) {
+        @for $i from 1 through $grid-columns {
+            .hidden-#{$key}-up {
+                display: none !important
+            }
+        }
+    }
+}

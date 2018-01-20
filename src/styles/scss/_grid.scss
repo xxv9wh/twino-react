@@ -1,0 +1,75 @@
+.container {
+    width: 100%;
+    max-width: $grid-container-width;
+    padding-left: $grid-gutter-width;
+    padding-right: $grid-gutter-width;
+    margin: 0 auto;
+    overflow: auto;
+
+    &-fluid {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.row {
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -#{$grid-gutter-width};
+    margin-left: -#{$grid-gutter-width};
+}
+
+.col {
+    -webkit-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+[class*="col-"] {
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    padding-right: $grid-gutter-width;
+    padding-left: $grid-gutter-width;
+}
+
+
+
+@for $i from 1 through $grid-columns {
+    .col-#{$i} {
+        flex-basis: 100% / 12 * $i;
+        max-width: 100% / 12 * $i;
+    }
+}
+
+@each $breakpoint in $grid-breakpoints {
+
+    $key: nth($breakpoint, 1);
+    $val: nth($breakpoint, 2);
+
+    @media (max-width: #{$val}) {
+        @for $i from 1 through $grid-columns {
+            .col-#{$key}-#{$i} {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 100% / 12 * $i;
+                flex: 0 0 100% / 12 * $i;
+                max-width: 100% / 12 * $i;
+            }
+        }
+    }
+}

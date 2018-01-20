@@ -1,0 +1,51 @@
+// typography
+@import url(https://fonts.googleapis.com/css?family=Barlow:400,500,600);
+$font-family-main: 'Barlow', sans-serif !important;
+$font-size: 1.25rem;
+$font-weight-normal: 400 !default;
+$font-weight-semibold: 500 !default;
+$font-weight-bold: 600 !default;
+$line-height: 1.5;
+
+// color
+$color-main-font: #212121 !default;
+$color-action: #FAFAFA !default;
+$color-footer: #EEEEEE !default;
+$color-option: #F2F2F2 !default;
+$color-accent: #4527A0 !default;
+$color-navbar: #FFB300 !default;
+$color-hero: #FFFFFF !default;
+$color-muted: #B0BEC5 !default;
+$color-indicator: #FFFFFF !default;
+$color-indicator-checked: #1A237E !default;
+$color-links: #F4511E !default;
+$color-navbar-links: #000000 !default;
+$color-navbar-links-hover: #FFFFFF !default;
+$color-input-placeholder: #808E95;
+
+// navbar
+$navbar-margin-x: 0 !default;
+$navbar-margin-y: 0 !default;
+$navbar-padding-x: 0 !default;
+$navbar-padding-y: 0 !default;
+
+$nav-item-margin-x: 0.75rem !default;
+$nav-item-margin-y: 1rem !default;
+$nav-item-padding-x: 0.75rem !default;
+$nav-item-padding-y: 0.75rem !default;
+
+// forms
+$btn-border: 1px solid $color-hero !default;
+$btn-radius: 4px !default;
+
+// grid
+$grid-columns: 12 !default;
+$grid-gutter-width: 0.5rem !default;
+$grid-container-width: 1280px !default;
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: $grid-container-width
+) !default;

@@ -1,0 +1,22 @@
+:root {
+    font-family: $font-family-main;
+    font-size: $font-size;
+    font-weight: $font-weight-normal;
+    color: $color-main-font;
+}
+
+* {
+    box-sizing : border-box;
+}
+
+#header-navbar {
+    background: $color-navbar;
+}
+
+#section-action {
+    background: $color-action;
+}
+
+#footer {
+    background: $color-footer;
+}
